@@ -4,16 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CORS Test</title>
-  <style>
-    #result{
-      background-color: rgb(84, 59, 168);
-    }
-  </style>
+
 </head>
 <body>
-  <h2 id="result"></h2> 
-<button id="fetchButton">Fetch Data</button>
+  <pre id="result"></pre> 
 
+<h2 style="background-color: blueviolet;">This is the monthly Dish Report</h2>
+
+<button id="fetchButton">Fetch Data</button>
   <script>
     document.getElementById('fetchButton').addEventListener('click', () => {
       fetch('http://localhost:3000/data') // This is the API server
