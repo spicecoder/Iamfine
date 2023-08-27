@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CORS Test</title>
+    <style>
+      #result {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <h2><pre id="result"></pre></h2>
+    <button id="fetchButton">Fetch Data</button>
+    <script>
+      document.getElementById("fetchButton").addEventListener("click", () => {
+        fetch("http://localhost:3000/data") // This is the API server
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+          })
+          .then((data) => {
+            document.getElementById("result").textContent = data.message;
+          })
+          .catch((error) => {
+            document.getElementById("result").textContent = "The Kitchen Hamara Monthly Order Report";
+          });
+      });
+    </script>
+  </body>
+</html>
