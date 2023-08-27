@@ -18,7 +18,7 @@ app.use((req, res, next) => {
 
 // Define a route
 app.get('/data', (req, res) => {
-  res.json({ message: 'This is KitchenHamara Monthly Dishes Report.' });
+  res.json({ message: 'This is data you requested' });
 });
 
 // Start the server

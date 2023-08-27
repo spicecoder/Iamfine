@@ -9,7 +9,7 @@
 <body>
   <pre id="result"></pre> 
 
-<h2 style="background-color: blueviolet;">This is the monthly Dish Report</h2>
+<h2 style="background-color: blueviolet;">This is the Monthly Dish Report</h2>
 
 <button id="fetchButton">Fetch Data</button>
   <script>
@@ -22,7 +22,7 @@
           return response.json();
         })
         .then(data => {
-          document.getElementById('result').textContent =data.message;
+          document.getElementById('result').textContent =JSON.stringify(data, null, 2);
         })
         .catch(error => {
           document.getElementById('result').textContent = `Error: ${error.message}`;
