@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase Client</title>
+</head>
+<body>
+<h1>Firebase Client</h1>
+<button id="fetchFCM">Fetch FCM from Firebase</button>
+<div id="data"></div>
+<!-- Firebase App (the core Firebase SDK) -->
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+<!-- Add the Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+<script>
+    // Your web app's Firebase configuration
+    firebaseConfig = {
+  apiKey: "AIzaSyAJA0esCg6gB0rUBBm6iBmcSIanrW4GAQ4",
+  authDomain: "khlogin-01.firebaseapp.com",
+  databaseURL: "https://khlogin-01.firebaseio.com",
+  projectId: "khlogin-01",
+  storageBucket: "khlogin-01.appspot.com",
+  messagingSenderId: "405781304253",
+  appId: "1:405781304253:web:d82a78fc10c387a85978d4",
+  measurementId: "G-L887L4HMFE"
+};
+    // Initialize Firebase
+    // firebase.initializeApp(firebaseConfig);
+    // Get a reference to the database service
+    // const database = firebase.database();
+    // document.getElementById('fetchData').addEventListener('click', function() {
+    //     database.ref('/').once('value').then(function(snapshot) {
+    //         const data = snapshot.val();
+    //         document.getElementById('data').innerText = JSON.stringify(data, null, 2);
+    //     });
+    // });
+    const messaging = firebase.getMessaging();  //explore firebase API to see the relation between firebase module and messaging module.and how getMessaging can be invoked correctly.
+     const  requestForToken= () => {
+  return firebase.getToken(messaging, { vapidKey: `BCV1N_G2oj3_tQuXmM78QQVje_WdkYDyqbUONJMaUMovfDrPKTs8mbSktvgoptdJxHwtSjck_0xs3T-aNCxFsXQ` })
+    .then((currentToken) => {
+      if (currentToken) {
+        token = currentToken;
+       // currentToken = token;
+        console.log('current token for client: ', currentToken);
+        // Perform any other neccessary action with the token
+      } else {
+        // Show permission request UI
+        console.log('No registration token available. Request permission to generate one.');
+      }
+    })
+    .catch((err) => {
+      console.log('An error occurred while retrieving token. ', err);
+    });
+};
+
+document.getElementById('fetchFCM').addEventListener('click',requestForToken);
+</script>
+</body>
+</html>
