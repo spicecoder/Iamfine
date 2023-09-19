@@ -27,15 +27,16 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 const auth = getAuth(app)
 const messaging = getMessaging();
-let token = null;
+const atoken = await getToken(messaging);
+export {atoken};
 export {app}
 export {auth}
 export const  requestForToken= () => {
   return getToken(messaging, { vapidKey: `BCV1N_G2oj3_tQuXmM78QQVje_WdkYDyqbUONJMaUMovfDrPKTs8mbSktvgoptdJxHwtSjck_0xs3T-aNCxFsXQ` })
     .then((currentToken) => {
       if (currentToken) {
-        token = currentToken;
-       // currentToken = token;
+      //   atoken = currentToken;
+      //  // currentToken = token;
 
         console.log('current token for client: ', currentToken);
         // Perform any other neccessary action with the token
@@ -63,8 +64,8 @@ export const onMessageListener = () =>
     
     const resultElement = document.getElementById('result-box');
   
-    if (token) {
-      resultElement.textContent = 'Current Token: ' + token;
+    if (atoken) {
+      resultElement.textContent = 'Current Token: ' + atoken;
     } else {
       resultElement.textContent = 'No current token available. Please request one.';
     }

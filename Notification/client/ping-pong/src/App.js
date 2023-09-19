@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { onMessageListener } from "./firebase";
 import Notification from "./notification"; // Assuming this is the correct import
 import { displayCurrentToken } from "./firebase";
-
+import OnlyToken from './OnlyToken';
 //const API_BASE_URL = "http://localhost:5020";
 
 const App = () => {
@@ -103,9 +103,9 @@ const App = () => {
       ) : (
         <></>
       )}
-      <Notification />
-
-      
+      {/* <Notification /> */}
+     <p> Only Token -No Condition</p>
+      <OnlyToken/>
       
     </div>
   );
