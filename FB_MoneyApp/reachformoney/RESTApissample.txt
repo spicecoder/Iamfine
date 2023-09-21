@@ -1,0 +1,94 @@
+    GET - Retrieve a resource
+
+javascript
+
+app.get('/users', (req, res) => {
+  // Retrieve all users
+  // Send response with retrieved users
+});
+
+app.get('/users/:id', (req, res) => {
+  const userId = req.params.id;
+  // Retrieve a user by ID
+  // Send response with retrieved user
+});
+
+    POST - Create a new resource
+
+javascript
+
+app.post('/users', (req, res) => {
+  const newUser = req.body; // New user data from request body
+  // Create a new user with the provided data
+  // Send response with the created user
+});
+
+    PUT - Update an existing resource
+
+javascript
+
+app.put('/users/:id', (req, res) => {
+  const userId = req.params.id;
+  const updatedUserData = req.body; // Updated user data from request body
+  // Update the user with the provided ID using the updated data
+  // Send response with the updated user
+});
+
+    DELETE - Delete a resource
+
+javascript
+
+app.delete('/users/:id', (req, res) => {
+  const userId = req.params.id;
+  // Delete the user with the provided ID
+  // Send response with a success message
+});
+
+    PATCH - Partially update an existing resource
+
+javascript
+
+app.patch('/users/:id', (req, res) => {
+  const userId = req.params.id;
+  const updatedUserData = req.body; // Updated user data from request body
+  // Partially update the user with the provided ID using the updated data
+  // Send response with the updated user
+});
+
+    HEAD - Retrieve metadata of a resource (similar to GET, but without the response body)
+
+javascript
+
+app.head('/users/:id', (req, res) => {
+  const userId = req.params.id;
+  // Retrieve metadata of the user with the provided ID
+  // Send response with metadata
+});
+
+    OPTIONS - Retrieve information about communication options for a resource
+
+javascript
+
+app.options('/users', (req, res) => {
+  // Retrieve information about communication options for users
+  // Send response with information
+});
+
+    CONNECT - Establish a network connection to a resource (rarely used in APIs)
+
+javascript
+
+app.connect('/users', (req, res) => {
+  // Establish a network connection to a resource
+});
+
+    TRACE - Retrieve a diagnostic trace of a resource (rarely used in APIs)
+
+javascript
+
+app.trace('/users/:id', (req, res) => {
+  const userId = req.params.id;
+  // Retrieve a diagnostic trace of the user with the provided ID
+  // Send response with trace information
+});
+
