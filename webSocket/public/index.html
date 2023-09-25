@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket and HTTP Demo</title>
+</head>
+<body>
+    <h1>WebSocket and HTTP Demo</h1>
+    <button onclick="fetchData()">Fetch HTTP Data</button>
+    <p id="httpData"></p>
+<form id="myForm">
+    <input type="text" name="username" placeholder="Username">
+    <input type="password" name="password" placeholder="Password">
+    <button type="button" onclick="submitForm()">Submit</button>
+</form>
+
+    <script>
+
+        const ws = new WebSocket('ws://localhost:3000');          
+        ws.onopen = () => {
+            console.log('Connected to the WebSocket server.');
+            ws.send('Hello from client!'); 
+         };
+        ws.onmessage = (event) => {
+            document.getElementById('httpData').innerText = event.data;
+        };
+        function fetchData() {
+            fetch('/http-endpoint')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('httpData').innerText = data;
+                });
+        }
+//         let ws = new WebSocket('ws://localhost:3000);
+// ws.onopen = function(event) {
+//     console.log("WebSocket connection opened:", event);
+// };
+function submitForm() {
+    const formData = new FormData(document.getElementById('myForm'));
+    let jsonObject = {};
+    // Convert form data to JSON
+    for (const [key, value]  of formData.entries()) {
+        jsonObject[key] = value;
+    }
+    console.log(JSON.stringify(jsonObject));
+    // Send JSON data over WebSocket
+    ws.send(JSON.stringify(jsonObject));
+}
+    </script>
+</body>
+</html>
