@@ -64,7 +64,8 @@ app.post("/recieveToken", (req, res) => {
 
 app.get('/send-token', async (req, res) => {
   try {
-    const targetToken ='crJPaeBxKsoa_hL6u76akC:APA91bGgUYZyM8Ma02DkOhb9ST0ZThnNm0ai0vl_K_EUNkQ23KUgG9uRzhJ5S5WNGW2OBYCbAPz8kCW-2nREDVGqfyi_v9bQpfAX89TLyf_nuGSomwVR4uhTJAD--wLfRDNM8eA7SObg'; // Retrieve the token from the URL
+    const targetToken ='crJPaeBxKsoa_hL6u76akC:APA91bGNqOUGZthV8nJY2f44xGO_77MCdkWMedBQnuAHJ9lpXoSKu9jGLqj9sScBj1-1-2CWNcd7tF9JvSDYRQAAMvONRk4sr0ddxI14tMZEBlJNVa1wlEgHZZDvffJQkWLPuqy4T1Ql'
+ // Retrieve the token from the URL
     const message = {
       notification: {
         title: 'KITCHEN HAMARA',
