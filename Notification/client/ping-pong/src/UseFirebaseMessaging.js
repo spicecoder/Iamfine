@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getMessaging, getToken } from 'firebase/messaging';
 
-export function UseFirebaseMessaging() {
+const UseFirebaseMessaging = function() {
     const [token, setToken] = useState(null);
 
     useEffect(() => {
