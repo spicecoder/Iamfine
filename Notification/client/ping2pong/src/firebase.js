@@ -1,6 +1,5 @@
 
 
-
 import { initializeApp } from 'firebase/app'
 import {getAuth} from 'firebase/auth'
 import {getMessaging,getToken,onMessage} from 'firebase/messaging'
@@ -70,22 +69,3 @@ export const onMessageListener = () =>
       resultElement.textContent = 'No current token available. Please request one.';
     }
   };
-
-
-  /*
-const currentUser = firebase.auth().currentUser;
-
-if (currentUser) {
-  const email = currentUser.email;
-  const phoneNumber = currentUser.phoneNumber;
-
-  console.log('Email:', email);
-  console.log('Phone Number:', phoneNumber);
-} else {
-  console.log('No user is currently signed in.');
-}
-
-
-
-
-  */

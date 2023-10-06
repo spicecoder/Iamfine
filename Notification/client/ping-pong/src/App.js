@@ -73,7 +73,7 @@ const App = () => {
   return (
     <div className="Notification-App">
        <div>
-     
+    
       <button onClick={displayCurrentToken}>Display Token</button>
       <div id="result-box"></div>
     </div>
@@ -83,7 +83,7 @@ const App = () => {
           value={userInput}
           onChange={(e) => setUserInput(e.target.value)} // Update user input state
           required
-          placeholder="Enter Text"
+          placeholder="Enter Your message"
         />
         <button type="submit">SEND MSG TO NABAKUMAR</button>
       </form>
