@@ -1,4 +1,4 @@
-import { UseFirebaseMessaging } from './UseFirebaseMessaging.js';
+import UseFirebaseMessaging  from './UseFirebaseMessaging.js';
 
 function OnlyToken() {
     const token = UseFirebaseMessaging();

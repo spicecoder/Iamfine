@@ -44,7 +44,7 @@ app.post("/recieveToken", (req, res) => {
 
   app.get('/send-notification', async (req, res) => {
   try {
-    const targetToken ='crJPaeBxKsoa_hL6u76akC:APA91bGgUYZyM8Ma02DkOhb9ST0ZThnNm0ai0vl_K_EUNkQ23KUgG9uRzhJ5S5WNGW2OBYCbAPz8kCW-2nREDVGqfyi_v9bQpfAX89TLyf_nuGSomwVR4uhTJAD--wLfRDNM8eA7SObg'; // Retrieve the token from the URL
+    const targetToken ="drYLpc-JysKEkhnCseVjr3:APA91bFxuSK5biFS2220uLvo08g5qMMXKQBlnO0--F23MD6NJQs-bCtKVwEXx28kCSvwjm3tC6iw_pCApfrBAdmNPjH0xrtn4BtJe0ctuVk4RR7rJ7jmWzNCDs70Bs-6lB9c15kQhBPH"; // Retrieve the token from the URL
     const message = {
       notification: {
         title: 'KITCHEN HAMARA',
@@ -64,7 +64,8 @@ app.post("/recieveToken", (req, res) => {
 
 app.get('/send-token', async (req, res) => {
   try {
-    const targetToken ='crJPaeBxKsoa_hL6u76akC:APA91bGgUYZyM8Ma02DkOhb9ST0ZThnNm0ai0vl_K_EUNkQ23KUgG9uRzhJ5S5WNGW2OBYCbAPz8kCW-2nREDVGqfyi_v9bQpfAX89TLyf_nuGSomwVR4uhTJAD--wLfRDNM8eA7SObg'; // Retrieve the token from the URL
+    const targetToken ='crJPaeBxKsoa_hL6u76akC:APA91bGNqOUGZthV8nJY2f44xGO_77MCdkWMedBQnuAHJ9lpXoSKu9jGLqj9sScBj1-1-2CWNcd7tF9JvSDYRQAAMvONRk4sr0ddxI14tMZEBlJNVa1wlEgHZZDvffJQkWLPuqy4T1Ql'
+ // Retrieve the token from the URL
     const message = {
       notification: {
         title: 'KITCHEN HAMARA',
