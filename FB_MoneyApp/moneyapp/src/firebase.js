@@ -1,9 +1,8 @@
-
-
-
 import { initializeApp } from 'firebase/app'
 import {getAuth} from 'firebase/auth'
+import { getFirestore } from "firebase/firestore"
 import {getMessaging,getToken,onMessage} from 'firebase/messaging'
+
 const firebaseConfig = {
 
   apiKey: "AIzaSyAJA0esCg6gB0rUBBm6iBmcSIanrW4GAQ4",
@@ -26,29 +25,18 @@ const firebaseConfig = {
 // Initialize Firebase and Firebase Authentication
 const app = initializeApp(firebaseConfig)
 const auth = getAuth(app)
+const db = getFirestore(app);
 const messaging = getMessaging();
 let token = null;
-export {app}
-export {auth}
+
+
 export const  requestForToken= () => {
-  // messaging.requestPermission()
-  // .then(() => {
-  //   console.log('Notification permission granted.');
-  //   // Get the token and potentially send it to your server
-  //  // return messaging.getToken();
-  // })
-  // .then(token => {
-  //   console.log('FCM Token:', token);
-  // })
-  // .catch(error => {
-  //   console.log('Error requesting notification permission:', error);
-  // });
-  
   return getToken(messaging, { vapidKey: `BCV1N_G2oj3_tQuXmM78QQVje_WdkYDyqbUONJMaUMovfDrPKTs8mbSktvgoptdJxHwtSjck_0xs3T-aNCxFsXQ` })
     
       .then((currentToken) => {
       if (currentToken) {
         token = currentToken;
+        console.log("ttttoookkkeeennn +=" , token);
        // currentToken = token;
 
         console.log('current token for client: ', currentToken);
@@ -64,6 +52,7 @@ export const  requestForToken= () => {
     });
 };
 
+
 export const onMessageListener = () =>
   new Promise((resolve) => {
     onMessage(messaging, (payload) => {
@@ -71,8 +60,6 @@ export const onMessageListener = () =>
       resolve(payload);
     });
   });
-
-
   export const displayCurrentToken = () => {
     
     const resultElement = document.getElementById('result-box');
@@ -83,3 +70,6 @@ export const onMessageListener = () =>
       resultElement.textContent = 'No current token available. Please request one.';
     }
   };
+
+export {auth}
+export {db}
