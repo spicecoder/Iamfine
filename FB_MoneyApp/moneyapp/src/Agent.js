@@ -1,15 +1,17 @@
 import {useState} from 'react'
-import { userToken } from './saveTokenToFirebase';
+import {userTokenn} from './getTokenFromFirebase'
+
 import './forms.css'
 let userid = null;
 function Agent(){
   const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
+  const [chat, setChat] = useState('')
   
   const reflect = e => {
     e.preventDefault()
-    alert("your email is" + email)
-    alert("your message" + message)
+    alert("your email is  " + email)
+    alert("your message  " + chat)
+    alert("fetched   "+ userTokenn)
     userid= email;
     console.log(userid);
      fetch("http://localhost:5020/send-notifi", {
@@ -17,7 +19,8 @@ function Agent(){
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ message }),
+      body: JSON.stringify({ chat,userTokenn}),
+      
     })
   //   fetch("http://localhost:5020/send-notifi", {
   //     method: "POST",
@@ -40,10 +43,10 @@ function Agent(){
             onChange={e => setEmail(e.target.value)}/>
              <input
             type='message'
-            value={message}
+            value={chat}
             required
             placeholder="Enter your message"
-            onChange={e => setMessage(e.target.value)}/>
+            onChange={e => setChat(e.target.value)}/>
       <button type='submit'>SENDER</button>
         </form>
        

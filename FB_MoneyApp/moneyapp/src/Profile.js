@@ -19,6 +19,7 @@ function Profile() {
   const handleOnClick = () => {
     //nabamitabina@yahoo.com
     const newItem = displayData({ email : userid});
+    console.log("123456123456123456     =>     ",newItem.value)
     setItem(newItem);
     setShowItem(true);
   };

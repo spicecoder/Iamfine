@@ -18,14 +18,15 @@ let currentMoney = 0; // Initial money amount
 
 app.post('/send-notifi', async (req, res) => {
   try {
-    const targetToken = "eT3dRPmg30HKLR3KRqGrNB:APA91bHvK1JD6RXgiJPqbP1frubxij2pjf8IgMHIqSXG8SjKlZXIPd9u3Ip54-p0fpYZQOdzGgwHVjsiHm49J6eEFcOFHdrSCjN4_bnFWjMpdSYKHvUAvtaHjchev1KxRU2OyfkHKytA";//e token from the URL
+    const targetToken = req.body.userToken;//e token from the URL
+    //"eT3dRPmg30HKLR3KRqGrNB:APA91bHvK1JD6RXgiJPqbP1frubxij2pjf8IgMHIqSXG8SjKlZXIPd9u3Ip54-p0fpYZQOdzGgwHVjsiHm49J6eEFcOFHdrSCjN4_bnFWjMpdSYKHvUAvtaHjchev1KxRU2OyfkHKytA"
     console.log(targetToken);
-    //const uimsg = req.body.message;
-   // console.log(uimsg);
+    const uimsg = req.body.chat;
+    console.log(uimsg);
     const message = {
       notification: {
         title: 'KITCHEN HAMARA',
-        body: "uimsg"
+        body: uimsg
       },
       token: targetToken, // Targeting a specific token
     };
