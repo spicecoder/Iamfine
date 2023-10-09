@@ -60,16 +60,16 @@ export const onMessageListener = () =>
       resolve(payload);
     });
   });
-  export const displayCurrentToken = () => {
+  // export const displayCurrentToken = () => {
     
-    const resultElement = document.getElementById('result-box');
+  //   const resultElement = document.getElementById('result-box');
   
-    if (token) {
-      resultElement.textContent = 'Current Token: ' + token;
-    } else {
-      resultElement.textContent = 'No current token available. Please request one.';
-    }
-  };
+  //   if (token) {
+  //     resultElement.textContent = 'Current Token: ' + token;
+  //   } else {
+  //     resultElement.textContent = 'No current token available. Please request one.';
+  //   }
+  // };
 
 export {auth}
 export {db}

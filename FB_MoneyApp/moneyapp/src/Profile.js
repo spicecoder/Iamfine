@@ -8,7 +8,7 @@ import {displayData} from './getTokenFromFirebase'
 import { useState, useEffect } from 'react';
 //import { Router } from 'express';
 import {Agent , userid} from './Agent';
-import {displayCurrentToken} from "./firebase"
+//import {displayCurrentToken} from "./firebase"
 
 function Profile() {
   const { currentUser } = useAuthValue();
@@ -54,11 +54,11 @@ function Profile() {
         </p>
         <p> 
         <Agent />
-        <div>
+        {/* <div>
      
       <button onClick={displayCurrentToken}>Display Token</button>
       <div id="result-box"></div>
-    </div> 
+    </div>  */}
     FB AUTH token </p>
           <div>
            
