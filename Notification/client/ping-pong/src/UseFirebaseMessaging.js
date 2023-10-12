@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getMessaging, getToken } from 'firebase/messaging';
-export const sweet = "new day";
+
 export function UseFirebaseMessaging() {
     const [token, setToken] = useState(null);
 
@@ -17,4 +17,3 @@ export function UseFirebaseMessaging() {
     return token;
 }
 export default UseFirebaseMessaging
- 
