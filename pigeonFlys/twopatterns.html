@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pigeon Animation</title>
+    <style>
+        .pigeon {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            margin: 20px;
+            background-size: 50px 50px;
+            transition: background-color 2s, background-image 2s;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        .smooth {
+            background-image: linear-gradient(45deg, transparent 25%, #000 25%, #000 75%, transparent 75%, transparent),
+                              linear-gradient(-45deg, transparent 25%, #000 25%, #000 75%, transparent 75%, transparent);
+        }
+
+        .jagged {
+            background-image: linear-gradient(135deg, transparent 25%, #000 25%, #000 75%, transparent 75%, transparent),
+                              linear-gradient(-135deg, transparent 25%, #000 25%, #000 75%, transparent 75%, transparent);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="pigeon1" class="pigeon blue smooth"></div>
+    <div id="pigeon2" class="pigeon blue smooth"></div>
+
+    <script>
+        
+        setTimeout(() => {
+            document.getElementById('pigeon1').classList.remove('blue', 'smooth');
+            document.getElementById('pigeon1').classList.add('orange', 'jagged');
+
+            document.getElementById('pigeon2').classList.remove('blue', 'smooth');
+            document.getElementById('pigeon2').classList.add('orange', 'jagged');
+        }, 5000); // Changes will occur after 5000 milliseconds (5 seconds)
+   
+   </script>
+</body>
+
+</html>
