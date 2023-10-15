@@ -2,10 +2,11 @@ import { doc, getDoc } from "firebase/firestore";
 import {db} from "./firebase"
 
 
-//const docRef = doc(db, "cities", "SF");
-//const docSnap = await getDoc(docRef);
+
+
 let userTokenn ;
-//let docData = null;
+
+
 
 export async function fetchTokenFromFirestore(  email) {
     const docRef = doc(db,"user_token",  email);
@@ -50,4 +51,6 @@ export async function fetchTokenFromFirestore(  email) {
 }
 
 
- export {userTokenn}
+
+
+export{userTokenn}

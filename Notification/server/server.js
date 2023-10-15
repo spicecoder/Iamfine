@@ -32,7 +32,7 @@ app.post("/recieveToken", (req, res) => {
 
   app.get('/send-notification', async (req, res) => {
   try {
-    const targetToken ='eyJhbGciOiJSUzI1NiIsImtpZCI6IjlhNTE5MDc0NmU5M2JhZTI0OWIyYWE3YzJhYTRlMzA2M2UzNDFlYzciLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20va2hsb2dpbi0wMSIsImF1ZCI6ImtobG9naW4tMDEiLCJhdXRoX3RpbWUiOjE2OTY3MzU1MDMsInVzZXJfaWQiOiIyVHV6MmVQSHZIVnU5N2JPaWVmVjFLVG54YTEyIiwic3ViIjoiMlR1ejJlUEh2SFZ1OTdiT2llZlYxS1RueGExMiIsImlhdCI6MTY5NjczNTUwMywiZXhwIjoxNjk2NzM5MTAzLCJlbWFpbCI6ImNvbmNyZXRlZWVkaXJlZDY5QGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbImNvbmNyZXRlZWVkaXJlZDY5QGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.Q5RuGWkSsAZ_S0uEhUigiv_0j_04Wjv7dnzvuEJl5e_UvcOVomHPqAKNbqe4bb-gt4xUj-PGmmO-sUR1lWO-bPrgM6onUPREoiHPIS6h5qoY3cbidQjU0m35ZO4HCrCvgWqOnjeJvuvw-ANMUZhJhvboK-P06MXzsbxsgG0G-0wmMC1DVxPK-oOdjrS0Yv4U6mSvQ0_BKf_38sVg8iPZvkO3GSf8SmjHHtfDkOn_HASj8WmPneKoTwyy9rWtOGL3j3v_CDZqW44MbeesOdI46b_lC412K1eBdAL5l1QDynfBZbY10dfkpkWbEkDSQYLsya---lfZad9-DNx-RQxyDw'//e token from the URL
+    const targetToken ='fh4BN6GaYsvOpgNdOTH5wT:APA91bFC8yWQwvLQ7L0gfrF19GB9kEjVao6Zs7Tm-hoHUNVhBSappCIPRB3JFvcP7-Lp5JZiBWpxV5nV3Gy6r9Q_AfnqiR9lWwQFwNVXthY2U9pyN9E6X8DMhKGRNm2mZPLngMyOkPuJ'//e token from the URL
     const message = {
       notification: {
         title: 'KITCHEN HAMARA',

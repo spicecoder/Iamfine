@@ -9,8 +9,8 @@ const App = () => {
  
   const [show, setShow] = useState(false);
   const [notification, setNotification] = useState({ title: "", body: "" });
-  // const [item, setItem] = useState('');
-  // const [showItem, setShowItem] = useState(false);
+  const [item, setItem] = useState('');
+  const [showItem, setShowItem] = useState(false);
   // //const token = "";
   const [userInput, setUserInput] = useState("");
   const [userInput1, setUserInput1] = useState("");
@@ -20,11 +20,11 @@ const App = () => {
     setNotification({ title, body });
     setShow(true);
   };
-  // const handleClick = () => {
-  //   const newItem = displayCurrentToken;
-  //   setItem(newItem);
-  //   setShowItem(true);
-  // };
+  const handleClick = () => {
+    const newItem = displayCurrentToken;
+    setItem(newItem);
+    setShowItem(true);
+  };
 
   const recieve = (e) => {
     e.preventDefault(); // Prevent the form from submitting and refreshing the page
@@ -74,7 +74,7 @@ const App = () => {
     <div className="Notification-App">
        <div>
      
-      <button onClick={displayCurrentToken}>Display Token</button>
+      <button onClick={handleClick}>Display Token</button>
       <div id="result-box"></div>
     </div>
       <form onSubmit={recieve} name="token_receiving">

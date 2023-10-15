@@ -31,18 +31,7 @@ let token = null;
 export {app}
 export {auth}
 export const  requestForToken= () => {
-  // messaging.requestPermission()
-  // .then(() => {
-  //   console.log('Notification permission granted.');
-  //   // Get the token and potentially send it to your server
-  //  // return messaging.getToken();
-  // })
-  // .then(token => {
-  //   console.log('FCM Token:', token);
-  // })
-  // .catch(error => {
-  //   console.log('Error requesting notification permission:', error);
-  // });
+  
   
   return getToken(messaging, { vapidKey: `BCV1N_G2oj3_tQuXmM78QQVje_WdkYDyqbUONJMaUMovfDrPKTs8mbSktvgoptdJxHwtSjck_0xs3T-aNCxFsXQ` })
     
@@ -76,7 +65,7 @@ export const onMessageListener = () =>
   export const displayCurrentToken = () => {
     
     const resultElement = document.getElementById('result-box');
-  
+    console.log(token)
     if (token) {
       resultElement.textContent = 'Current Token: ' + token;
     } else {
