@@ -15,7 +15,10 @@ import {Navigate} from 'react-router-dom'
 import {ColorProvider} from './colorFlash/ColorContext'
 import {Square, Circle} from './colorFlash/SquareCircle'
 import ACircle from './colorFlash/ACircle'
+<<<<<<< HEAD
 import { fetchTokenFromFirestore } from './getTokenFromFirebase'
+=======
+>>>>>>> main
 //import AuthContext from "./AuthContext";
 //
 //import { useNavigate, Navigate } from "react-router-dom";
@@ -91,7 +94,11 @@ const App = () => {
     <p>You can connect to your wallet.</p>
   )}
 </>
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> main
     </div>
   
   );

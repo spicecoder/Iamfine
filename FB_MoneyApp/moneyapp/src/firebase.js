@@ -1,8 +1,11 @@
 import { initializeApp } from 'firebase/app'
 import {getAuth} from 'firebase/auth'
+<<<<<<< HEAD
 import { getFirestore } from "firebase/firestore"
 import {getMessaging,getToken,onMessage} from 'firebase/messaging'
 
+=======
+>>>>>>> main
 const firebaseConfig = {
 
   apiKey: "AIzaSyAJA0esCg6gB0rUBBm6iBmcSIanrW4GAQ4",
@@ -25,6 +28,7 @@ const firebaseConfig = {
 // Initialize Firebase and Firebase Authentication
 const app = initializeApp(firebaseConfig)
 const auth = getAuth(app)
+<<<<<<< HEAD
 const db = getFirestore(app);
 const messaging = getMessaging();
 let token = null;
@@ -73,3 +77,7 @@ export const onMessageListener = () =>
 
 export {auth}
 export {db}
+=======
+
+export {auth}
+>>>>>>> main

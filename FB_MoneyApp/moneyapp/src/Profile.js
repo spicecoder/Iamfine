@@ -2,6 +2,7 @@ import './profile.css'
 import {useAuthValue} from './AuthContext'
 import { signOut } from 'firebase/auth' 
 import { auth } from './firebase'
+<<<<<<< HEAD
 import { saveTokenToFirestore } from './saveTokenToFirebase';
 import {displayData} from './getTokenFromFirebase'
 //import {BrowserRouter as  Routes, Route} from 'react-router-dom'
@@ -9,10 +10,16 @@ import { useState, useEffect } from 'react';
 //import { Router } from 'express';
 import {Agent , userid} from './Agent';
 //import {displayCurrentToken} from "./firebase"
+=======
+
+import { useState, useEffect } from 'react';
+
+>>>>>>> main
 
 function Profile() {
   const { currentUser } = useAuthValue();
   const [token, setToken] = useState(null);
+<<<<<<< HEAD
    const [item, setItem] = useState('');
    const [showItem, setShowItem] = useState(false);
 
@@ -24,6 +31,8 @@ function Profile() {
     setShowItem(true);
   };
   
+=======
+>>>>>>> main
   function formatToken(token) {
     if (!token) return null;
     return token.length > 20 ? `${token.substring(0, 20)}...` : token;
@@ -32,6 +41,7 @@ function Profile() {
     const fetchToken = async () => {
       if (currentUser) {
         const fetchedToken = await currentUser.getIdToken();
+<<<<<<< HEAD
         
         saveTokenToFirestore(currentUser.email, fetchedToken);
         setToken(fetchedToken);
@@ -39,6 +49,11 @@ function Profile() {
       
     };
     
+=======
+        setToken(fetchedToken);
+      }
+    };
+>>>>>>> main
 
     fetchToken();
   }, [currentUser]);
@@ -53,6 +68,7 @@ function Profile() {
           {`${currentUser?.emailVerified}`}
         </p>
         <p> 
+<<<<<<< HEAD
         <Agent />
         {/* <div>
      
@@ -66,6 +82,9 @@ function Profile() {
      <button onClick={handleOnClick}>Display Data</button>
      <div id="result-box"></div>
    </div>
+=======
+          FB AUTH token </p>
+>>>>>>> main
           <p>
           {formatToken(token)}
         </p>

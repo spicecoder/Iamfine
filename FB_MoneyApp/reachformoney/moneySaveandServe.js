@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+<<<<<<< HEAD
 const serviceAccount = require("./khlogin.json"); 
 const admin = require("firebase-admin");
 const bodyParser = require("body-parser");
@@ -40,6 +41,14 @@ app.post('/send-notifi', async (req, res) => {
   }
 });
 
+=======
+
+const app = express();
+app.use(cors());
+
+let currentMoney = 0; // Initial money amount
+
+>>>>>>> main
 // Route to fetch money
 app.get("/money", (req, res) => {
   // Send the current money amount as JSON response

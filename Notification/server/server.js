@@ -13,6 +13,18 @@ let uimsg = null;
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
+app.use((req, res, next) => {
+  // Allow requests from any origin
+  res.header('Access-Control-Allow-Origin', '*');
+
+  // Allow specific HTTP methods
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+
+  // Allow specific headers
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+
+  next();
+});
 
 app.post("/recieve", (req, res) => {
     const userInput = req.body.userInput;
@@ -32,7 +44,11 @@ app.post("/recieveToken", (req, res) => {
 
   app.get('/send-notification', async (req, res) => {
   try {
+<<<<<<< HEAD
     const targetToken ='fh4BN6GaYsvOpgNdOTH5wT:APA91bFC8yWQwvLQ7L0gfrF19GB9kEjVao6Zs7Tm-hoHUNVhBSappCIPRB3JFvcP7-Lp5JZiBWpxV5nV3Gy6r9Q_AfnqiR9lWwQFwNVXthY2U9pyN9E6X8DMhKGRNm2mZPLngMyOkPuJ'//e token from the URL
+=======
+    const targetToken ="drYLpc-JysKEkhnCseVjr3:APA91bFxuSK5biFS2220uLvo08g5qMMXKQBlnO0--F23MD6NJQs-bCtKVwEXx28kCSvwjm3tC6iw_pCApfrBAdmNPjH0xrtn4BtJe0ctuVk4RR7rJ7jmWzNCDs70Bs-6lB9c15kQhBPH"; // Retrieve the token from the URL
+>>>>>>> main
     const message = {
       notification: {
         title: 'KITCHEN HAMARA',
@@ -52,7 +68,12 @@ app.post("/recieveToken", (req, res) => {
 
 app.get('/send-token', async (req, res) => {
   try {
+<<<<<<< HEAD
     const targetToken ='crJPaeBxKsoa_hL6u76akC:APA91bH4KBALQJ6l5id4dczrVHv-rw58l9l_hGyx1MWhGvDCr30VncupBEKpRGr0cbsMyQoFNdbPYgJ-8r_Eeu-WyIMSIBql2d-ijtREjRvd40dhFwix5NhC_CcFCMa5RHj6fDVhnwqK'; // Retrieve the token from the URL
+=======
+    const targetToken ='crJPaeBxKsoa_hL6u76akC:APA91bGNqOUGZthV8nJY2f44xGO_77MCdkWMedBQnuAHJ9lpXoSKu9jGLqj9sScBj1-1-2CWNcd7tF9JvSDYRQAAMvONRk4sr0ddxI14tMZEBlJNVa1wlEgHZZDvffJQkWLPuqy4T1Ql'
+ // Retrieve the token from the URL
+>>>>>>> main
     const message = {
       notification: {
         title: 'KITCHEN HAMARA',
