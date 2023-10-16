@@ -32,10 +32,6 @@ export {atoken};
 export {app}
 export {auth}
 export const  requestForToken= () => {
-<<<<<<< HEAD
-  
-  
-=======
   messaging.requestPermission()
     .then(() => {
       console.log('Notification permission granted.');
@@ -48,7 +44,6 @@ export const  requestForToken= () => {
     .catch(error => {
       console.log('Error requesting notification permission:', error);
     }); 
->>>>>>> main
   return getToken(messaging, { vapidKey: `BCV1N_G2oj3_tQuXmM78QQVje_WdkYDyqbUONJMaUMovfDrPKTs8mbSktvgoptdJxHwtSjck_0xs3T-aNCxFsXQ` })
     
       .then((currentToken) => {
@@ -81,15 +76,9 @@ export const onMessageListener = () =>
   export const displayCurrentToken = () => {
     
     const resultElement = document.getElementById('result-box');
-<<<<<<< HEAD
-    console.log(token)
-    if (token) {
-      resultElement.textContent = 'Current Token: ' + token;
-=======
-  
+    console.log(atoken)
     if (atoken) {
       resultElement.textContent = 'Current Token: ' + atoken;
->>>>>>> main
     } else {
       resultElement.textContent = 'No current token available. Please request one.';
     }
